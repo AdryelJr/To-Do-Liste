@@ -14,7 +14,7 @@ body{
 /* todo - header */
 
 .todo-container{
-    background-color: #EAFDFC;
+    background-color: #d4e0e0;
     margin: 5% auto;
     max-width: 500px;
     border-radius: 10px;
@@ -32,7 +32,7 @@ button{
     color: #d1930e;
     border: 1px solid #dfa62b;
     border-radius: 6px;
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.7rem;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
