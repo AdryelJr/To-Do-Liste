@@ -35,11 +35,11 @@ todoForm.addEventListener("submit", (event) => {
         todoInput.value = '';
         todoInput.focus();
 
-        const finishButtons = document.querySelectorAll(".finish-todo");
+        const finishBtn = document.querySelectorAll(".finish-todo");
 
-        for (let i = 0; i < finishButtons.length; i++) {
-            finishButtons[i].addEventListener("click", () => {
-                const todoDiv = finishButtons[i].parentNode;
+        for (let i = 0; i < finishBtn.length; i++) {
+            finishBtn[i].addEventListener("click", () => {
+                const todoDiv = finishBtn[i].parentNode;
 
                 if (todoDiv.classList.contains("done")) {
                     todoDiv.classList.remove("done");
@@ -47,6 +47,14 @@ todoForm.addEventListener("submit", (event) => {
                     todoDiv.classList.add("done");
                 }
             });
+
+        const removeBtn = todoList.querySelectorAll('.remove-todo')[i];
+
+        removeBtn.addEventListener('click', () => {
+            const todoDiv = removeBtn.parentNode;
+
+            todoDiv.remove();
+        });
         }
     }
 });
