@@ -11,6 +11,21 @@ const editandoTarefa = document.getElementById('editandoTarefa');
 var tarefaEmEdicao = null;
 // Funções
 
+
+// botao de cancelar
+
+function btnCancelar(){
+
+    if(tarefaEmEdicao && tarefaOriginal){
+        tarefaEmEdicao.textContent = tarefaOriginal;
+        editForm.style.display = 'none';
+        tarefaOriginal = null;
+        tarefaEmEdicao = null;
+    }
+}
+
+
+
 // Eventos
 
 todoForm.addEventListener("submit", (event) => {
@@ -62,10 +77,14 @@ todoForm.addEventListener("submit", (event) => {
 
             removeBtn.addEventListener('click', () => {
                 todoDiv.remove();
+                if(editForm.style.display = 'block'){
+                    editForm.style.display = 'none';
+                }
             });
 
             btnEditar.addEventListener('click', () => {
                 tarefaEmEdicao = todoDiv.querySelector('h3');
+                tarefaOriginal = tarefaEmEdicao.textContent;
                 editInput.value = tarefaEmEdicao.textContent;
                 editForm.style.display = 'block';
             });
@@ -74,18 +93,11 @@ todoForm.addEventListener("submit", (event) => {
 });
 
 editForm.addEventListener("submit", (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
-    if(tarefaEmEdicao){
+    if (tarefaEmEdicao) {
         tarefaEmEdicao.textContent = editInput.value;
         tarefaEmEdicao = null;
     }
     editForm.style.display = 'none'
-});
-
-
-// botao de cancelar tarefa
-
-cancelEditBtn.addEventListener("click", () =>{
-    editForm.style.display = 'none';
 });
