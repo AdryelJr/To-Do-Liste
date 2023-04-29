@@ -7,7 +7,7 @@
 
 section{
     width: 100%;
-    height: 100vh;
+    height: 200vh;
     background-image: url('https://img.freepik.com/vetores-premium/wallpaper-de-paisagem-em-design-plano_74890-37.jpg?w=996') ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,7 +22,7 @@ body{
 
 .todo-container{
     background-color: #d4e0e0;
-    margin: 5% auto;
+    margin: 6% auto;
     max-width: 500px;
     border-radius: 10px;
     padding: 1.5rem;
@@ -66,9 +66,16 @@ input, select{
 
 /* Form's  */
 
-#todo-form, #edit-form{
+#todo-form{
     border-bottom: 1px solid #ccc;
     padding: 1rem;
+}
+#edit-form{
+    border-bottom: 1px solid #ccc;
+    background-color: #c1c1c1;
+    padding: 1.5rem 2.2rem;
+    margin: 0 -20px;
+    border-radius: 10px;
 }
 
 #todo-form p,
@@ -139,7 +146,7 @@ input, select{
     justify-content: space-around;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #DDD;
+    border-bottom: 2px solid #ccc;
     transition: 0.3s;
 }
 
@@ -160,6 +167,18 @@ input, select{
 }
 
 .done h3{
+    font-weight: 400;
+    color: #fff;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.done2{
+    background-color: #8aa1af;
+    border-radius: 5px;
+}
+
+.done2 h3{
     font-weight: 400;
     color: #fff;
     text-decoration: line-through;

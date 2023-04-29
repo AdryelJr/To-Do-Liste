@@ -6,7 +6,9 @@ const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 const todoList = document.querySelector("#todo-list");
+const editandoTarefa = document.getElementById('editandoTarefa');
 
+var tarefaEmEdicao = null;
 // Funções
 
 // Eventos
@@ -35,27 +37,55 @@ todoForm.addEventListener("submit", (event) => {
         todoInput.value = '';
         todoInput.focus();
 
-        const finishBtn = document.querySelectorAll(".finish-todo");
+        const todoDivs = todoList.querySelectorAll(".todo");
 
-        for (let i = 0; i < finishBtn.length; i++) {
-            finishBtn[i].addEventListener("click", () => {
-                const todoDiv = finishBtn[i].parentNode;
+        for (let i = 0; i < todoDivs.length; i++) {
+            const todoDiv = todoDivs[i];
+            const finishBtn = todoDiv.querySelector('.finish-todo');
+            const removeBtn = todoDiv.querySelector('.remove-todo');
+            const btnEditar = todoDiv.querySelector('.edit-todo');
+            let index = i;
 
+            finishBtn.addEventListener("click", () => {
                 if (todoDiv.classList.contains("done")) {
                     todoDiv.classList.remove("done");
+                } else if (todoDiv.classList.contains("done2")) {
+                    todoDiv.classList.remove("done2");
                 } else {
-                    todoDiv.classList.add("done");
+                    if (i % 2 == 0) {
+                        todoDiv.classList.add("done2");
+                    } else {
+                        todoDiv.classList.add("done");
+                    }
                 }
             });
 
-        const removeBtn = todoList.querySelectorAll('.remove-todo')[i];
+            removeBtn.addEventListener('click', () => {
+                todoDiv.remove();
+            });
 
-        removeBtn.addEventListener('click', () => {
-            const todoDiv = removeBtn.parentNode;
-
-            todoDiv.remove();
-        });
+            btnEditar.addEventListener('click', () => {
+                tarefaEmEdicao = todoDiv.querySelector('h3');
+                editInput.value = tarefaEmEdicao.textContent;
+                editForm.style.display = 'block';
+            });
         }
     }
 });
 
+editForm.addEventListener("submit", (event) => {
+    event.preventDefault(); 
+
+    if(tarefaEmEdicao){
+        tarefaEmEdicao.textContent = editInput.value;
+        tarefaEmEdicao = null;
+    }
+    editForm.style.display = 'none'
+});
+
+
+// botao de cancelar tarefa
+
+cancelEditBtn.addEventListener("click", () =>{
+    editForm.style.display = 'none';
+});
