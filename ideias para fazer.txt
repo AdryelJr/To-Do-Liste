@@ -1,0 +1,6 @@
+
+Adicionar um footer na página
+
+Adicionar a funcionalidade de filtrar
+
+Adicionar a funcionalidade de pesquisa
