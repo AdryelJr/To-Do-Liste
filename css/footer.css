@@ -2,4 +2,19 @@ footer{
     margin: 15%;
     color: aliceblue;
     margin: auto;
+    font-size: small;
+}
+
+/* ===================== */
+
+::-webkit-scrollbar{
+    width: 16px;
+}
+
+::-webkit-scrollbar-track{
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #2f0754;
 }
