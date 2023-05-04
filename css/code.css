@@ -7,11 +7,13 @@
 
 section{
     width: 100%;
-    height: 200vh;
+    height: 150vh;
     background-image: url('https://img.freepik.com/vetores-premium/wallpaper-de-paisagem-em-design-plano_74890-37.jpg?w=996') ;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
 }
 body{
     display: flex;
