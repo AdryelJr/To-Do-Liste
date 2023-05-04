@@ -11,6 +11,15 @@ const editandoTarefa = document.getElementById('editandoTarefa');
 var tarefaEmEdicao = null;
 // Funções
 
+// Função de pesquisa
+
+const inputPesquisa = document.querySelector("#search-input");
+
+
+// Função filtro
+
+const selectFilter = document.querySelector("#filter-select");
+
 
 // botao de cancelar
 
